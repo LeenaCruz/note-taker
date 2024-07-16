@@ -4,12 +4,10 @@ const path = require('path');
 
 
 router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, 'notes.html'));
-    res.send('La conexión ha sido correcta')
+    res.sendFile(path.join(__dirname, '../public/notes.html'));
 
 });
 
-// router.get('*', (req, res) => res.sendFile(path.join(__dirname, '../public/index.html')));
-router.get('*', (req, res) => res.json("Works"));
+
 
 module.exports = router;

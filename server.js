@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
 const PORT = 5500;
-const fs = require('fs');
+
 
 // Middleware JSON url encoder
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-
+// Root directory
 app.use(express.static('public'));
 
 
@@ -20,7 +20,7 @@ app.use(express.static('public'));
 // app.get('*', (req,res) => res.sendFile(path.join(__dirname, 'index.html')));
 
 
-// app.use('/api', require('./routes/api.routes'));
+app.use('/api', require('./routes/apiRoutes'));
 app.use('/', require('./routes/htmlRoutes'))
 // app.get('/api/notes', (req,res) => res.json(notes));
 
